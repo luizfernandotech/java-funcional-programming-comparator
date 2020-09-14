@@ -17,12 +17,9 @@ public class Program {
         list.add(new Product("Notebook", 1200.00));
         list.add(new Product("Tablet", 400.00));
 
-        // anonymous class comparator
-        Comparator<Product> comparator = new Comparator<Product>() {
-            @Override
-            public int compare(Product p1, Product p2) {
-                return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-            }
+        // anonymous function (lambda) comparator
+        Comparator<Product> comparator = (p1, p2) -> {
+            return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
         };
 
         list.sort(comparator);
